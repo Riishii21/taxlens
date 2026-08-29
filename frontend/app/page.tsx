@@ -59,7 +59,7 @@ export default function HomePage() {
   const [inputText, setInputText] = useState("");
   const [selectedScenario, setSelectedScenario] = useState<"notice" | "suspicious" | "ais">("notice");
   const [analysisMode, setAnalysisMode] =
-  useState<"gemini" | "demo-fallback">("demo-fallback");("demo-fallback");
+  useState<"gemini" | "openai" | "demo-fallback">("gemini");
   const [uploadedDocs, setUploadedDocs] = useState<string[]>([]);
   const [draft, setDraft] = useState(
     "I am providing the requested supporting information and documentary evidence in response to the communication for the assessment year 2025-26. The attached documents relate to the claim identified in the notice. I request that the submitted information be considered as part of the review."
@@ -544,7 +544,6 @@ this link..."`}
       Try a synthetic suspicious message →
     </button>
   </div>
-)}
            {screen === "notice-input" && (
   <div className="journey-content">
     <div className="result-kicker">
@@ -593,7 +592,7 @@ this link..."`}
                 formData.append("file", file);
 
                 const response = await fetch(
-                  "http://localhost:8000/cases/from-image",
+                  `${process.env.NEXT_PUBLIC_API_BASE}/cases/from-image`,
                   {
                     method: "POST",
                     body: formData,
@@ -648,12 +647,12 @@ this link..."`}
                 formData.append("file", file);
 
                 const response = await fetch(
-                  "http://localhost:8000/cases/from-image",
-                  {
-                    method: "POST",
-                    body: formData,
-                  }
-                );
+  `${process.env.NEXT_PUBLIC_API_BASE}/cases/from-image`,
+  {
+    method: "POST",
+    body: formData,
+  }
+);
 
                 if (!response.ok) {
                   throw new Error("Unable to analyze notice.");
