@@ -1,0 +1,6 @@
+[
+  {"id": "not_mine", "label": "Not my transaction"},
+  {"id": "duplicate", "label": "Duplicate entry"},
+  {"id": "incorrect_amount", "label": "Incorrect amount"},
+  {"id": "incorrect_info", "label": "Incorrect information"}
+]

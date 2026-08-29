@@ -1,0 +1,16 @@
+[
+  {
+    "notice_type": "143_3",
+    "plain_name": "Scrutiny / assessment review",
+    "meaning": "The department is reviewing information in your return and asks you to support it.",
+    "is_verdict": false,
+    "source_note": "Synthetic summary derived from publicly available concepts."
+  },
+  {
+    "notice_type": "143_2",
+    "plain_name": "Notice of scrutiny selection",
+    "meaning": "Your return has been selected for detailed examination.",
+    "is_verdict": false,
+    "source_note": "Synthetic summary derived from publicly available concepts."
+  }
+]
